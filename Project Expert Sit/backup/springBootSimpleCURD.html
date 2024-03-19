@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+ <style>
+ body {
+  background-color: #fbfbfb;
+}
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+}
+.card{
+margin: 10px;
+padding: 10px;
+background: #c9efef;
+}
+spam{
+
+  background: powderblue;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+
+* {
+  outline:none;
+	border:none;
+	margin:0px;
+	padding:0px;
+	font-family:Courier, monospace;
+}
+body {
+	background:#333 url(https://static.tumblr.com/maopbtg/a5emgtoju/inflicted.png) repeat;        
+}
+#paper {
+	color:#FFF;
+	font-size:20px;
+}
+#margin {
+	margin-left:12px;
+	margin-bottom:20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none; 
+}
+#text {
+	width:100%;
+	hight:100%;
+	overflow:hidden;
+	background-color:#FFF;
+	color:#0e33c6;
+	font-family:Courier, monospace;
+	font-weight:normal;
+	font-size:24px;
+	resize:none;
+	line-height:40px;
+	padding-left:100px;
+	padding-right:100px;
+	padding-top:45px;
+	padding-bottom:34px;
+	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+	background-repeat:repeat-y, repeat;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
+}
+#title {
+	background-color:transparent;
+	border-bottom:3px solid #FFF;
+	color:#FFF;
+	font-size:20px;
+	font-family:Courier, monospace;
+	height:28px;
+	font-weight:bold;
+	width:220px;
+}
+#button {
+	cursor:pointer;
+	margin-top:20px;
+	float:right;
+	height:40px;
+	padding-left:24px;
+	padding-right:24px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:20px;
+	color:#FFF;
+	text-shadow: 0px -1px 0px #000000;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border-top:1px solid #FFF;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	background-color: #62add6;
+	background-image:url(https://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
+	background-repeat:repeat-x;
+}
+#button:active {
+	zoom: 1;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#button:focus {
+	zoom: 1;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#wrapper {
+	width:700px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:24px;
+	margin-bottom:100px;
+}
+ </style
+<body>
+
+<!--Main Navigation-->
+<header>
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse " style="background-color: aliceblue;">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+          aria-current="true"
+        >
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+        </a>
+        
+        <a href="#1" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-lock fa-fw me-3"></i><span>File Structure </span></a
+        >
+        <a href="#2" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-chart-line fa-fw me-3"></i><span>StudentController</span></a
+        >
+        <a href="#3" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>Student</span>
+        </a>
+        <a href="#4" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-chart-bar fa-fw me-3"></i><span>StudentRepository</span></a
+        >
+        <a href="#5" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-globe fa-fw me-3"></i><span>StudentService</span></a
+        >
+        <a href="#6" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-building fa-fw me-3"></i><span>Pom</span></a
+        >
+          <a href="#7" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-building fa-fw me-3"></i><span>Data Base</span></a
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+
+  <!-- Navbar -->
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top" >
+    <!-- Container wrapper --><h5 class="text-center">  </h5>
+	
+    <div class="row" >
+      <!-- Toggle button -->
+	 
+<div class="col-3"><a class="navbar-brand" href="#">
+	  
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUaoujgakvKsd-Zmfy4f_Va72eQCKqqKhxrw&usqp=CAU"
+          height="25"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+		
+      </a> </div>
+
+
+		
+	  
+   
+      
+		
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main >
+ 
+  <div class="container pt-4">
+  
+<div class="container card ">
+<h2>Simple sprinboot project </h2>
+<p>its one of the simple spring boot project for learning purpose .in this project i was use java springboot 4 , MySql database and Html Css for front end
+using refrance of the code you can write your won code
+
+
+</p>
+</div>
+
+  
+<div class="container card " id="1">
+<h2>File Structure </h2>
+<textarea  readonly id="text" name="text" rows="20" style="overflow: hidden; word-wrap: break-word; resize: none;font-size: medium;">com.example.emp
+|
+--------------------&gt;EmpApplication.java
+com.example.emp.service
+|
+---------------------&gt;StudentService
+com.example.emp.controller
+|
+----------------------&gt; StudentController.java
+com.example.emp.repository
+|
+-----------------------&gt; StudentRepository.java
+com.example.emp.domain
+|
+------------------------&gt;Student.java</textarea>
+</div>
+
+<div class="container card " id="2">
+<h2>StudentController.java </h2>
+<textarea readonly placeholder="" id="text" name="text" rows="60" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium;">com.example.emp
+package com.example.CurdSpringBoot.controller
+
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import com.example.CurdSpringBoot.domain.student;
+import com.example.CurdSpringBoot.service.StudentService;
+
+@Controller
+public class StudentController {
+	
+	 @Autowired
+	    private StudentService service;
+
+	    @GetMapping("/")
+	    public String viewHomePage(Model model) {
+	        List<student> liststudent = service.listAll();
+	        model.addAttribute("liststudent", liststudent);
+	        System.out.print("Get / ");	
+	        return "index";
+	    }
+
+	    @GetMapping("/new")
+	    public String add(Model model) {
+	        model.addAttribute("student", new student());
+	        return "new";
+	    }
+
+	    @RequestMapping(value = "/save", method = RequestMethod.POST)
+	    public String saveStudent(@ModelAttribute("student") student std) {
+	        service.save(std);
+	        System.err.println(std);
+	        return "redirect:/";
+	    }
+
+	    @RequestMapping("/edit/{id}")
+	    public ModelAndView showEditStudentPage(@PathVariable(name = "id") int id) {
+	        ModelAndView mav = new ModelAndView("new");
+	        student std = service.get(id);
+	        mav.addObject("student", std);
+	        return mav;
+	        
+	    }
+	    @RequestMapping("/delete/{id}")
+	    public String deletestudent(@PathVariable(name = "id") int id) {
+	        service.delete(id);
+	        return "redirect:/";
+	    }
+}
+
+
+</textarea>
+		
+
+</div>
+
+
+
+<div class="container card " id="3">
+<h2>student.java</h2>
+		<textarea readonly placeholder="" id="text" name="text" rows="56" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+		
+package com.example.CurdSpringBoot.domain;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "student")
+public class student {
+	@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+    private String studentname;
+    private String course;
+    private int fee;
+	public student() {
+
+	}
+	public student(Long id, String studentname, String course, int fee) {
+	
+		this.id = id;
+		this.studentname = studentname;
+		this.course = course;
+		this.fee = fee;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getStudentname() {
+		return studentname;
+	}
+	public void setStudentname(String studentname) {
+		this.studentname = studentname;
+	}
+	public String getCourse() {
+		return course;
+	}
+	public void setCourse(String course) {
+		this.course = course;
+	}
+	public int getFee() {
+		return fee;
+	}
+	public void setFee(int fee) {
+		this.fee = fee;
+	}
+
+}
+		</textarea>  
+		
+	
+</div>
+
+
+<div class="container card " id="4">
+<h2>StudentRepository.java</h2>
+
+		<textarea readonly placeholder="" id="text" name="text" rows="13" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+		package com.example.CurdSpringBoot.repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Repository;
+
+import com.example.CurdSpringBoot.domain.student;
+
+@Repository
+public interface StudentRepository extends JpaRepository<student, Long> {
+
+}</textarea>  
+		
+	
+</div>
+
+
+<div class="container card " id="5">
+<h2>StudentService.java</h2>
+		<textarea placeholder="" id="text" name="text" rows="33" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+package com.example.CurdSpringBoot.service;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.CurdSpringBoot.domain.student;
+import com.example.CurdSpringBoot.repository.StudentRepository;
+
+@Service
+public class StudentService {
+	
+	@Autowired
+    private StudentRepository repo;
+	
+	public List<student> listAll() {
+        return repo.findAll();
+    }
+     
+    public void save(student std) {
+        repo.save(std);
+    }
+     
+    public student get(long id) {
+        return repo.findById(id).get();
+    }
+     
+    public void delete(long id) {
+        repo.deleteById(id);
+    }
+
+}</textarea>  
+		
+	
+</div>
+
+<div class="container card "id="7">
+<h2>pom.xml</h2>
+		<textarea readonly placeholder="" id="text" name="text" rows="55" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; "><?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.6</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>CurdSpringBoot</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>CurdSpringBoot</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
+		
+		
+		</textarea>  
+		
+	
+</div>
+
+<div class="container card " id="8">
+<h2>Data Base</h2>
+		<textarea readonly placeholder="" id="text" name="text" rows="8" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+DROP TABLE IF EXISTS `lindaschool2`.`student`;
+CREATE TABLE  `lindaschool2`.`student` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `studentname` varchar(45) DEFAULT NULL,
+  `course` varchar(45) DEFAULT NULL,
+  `fee` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+		
+		
+		</textarea>  
+		
+	
+</div>
+
+</div>
+  
+  
+  <script>
+  
+  
+  $(document).ready(function(){
+  $('#title').focus();
+    $('#text').autosize();
+});
+  </script>
+  
+  </div>
+</main>
+<!--Main layout-->
+      
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text-to-Speech</title>
+
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="hero">
+  <section id="hero2" class="">
+  <div class="row bg-gray" >
+    <div class="card m-3">
+<h3 class="p-2 m-2 title  text-center">Made By<a href="https://kirankaleresume.web.app">  Kiran Kale </a>( Mr.Developer )</h3>
+<h5 class=" title  text-center text-info"> This App Made For Converting Text to Speech</h5>
+
+</div>
+    <div class=" card col-lg-4 m-5">
+
+      <div class="card">
+        <label for="text-input">Text:</label>
+        <textarea id="text-input" rows="8" cols="50" placeholder="Give Me 50 Sentence
+        "></textarea>
+      </div>
+      <div >
+        <label for="speed-input">Speed:</label>
+        <input type="range" id="speed-input" min="0.5" max="1" step="0.1"   class="textarea m-2" >
+      </div>
+      <div>
+        <label for="voice-select">Voice:</label>
+        <select id="voice-select"></select>
+      </div>
+      <button class="btn btn-secondary m-2"  onclick="speakdef()">Speak with defult voice</button>
+      <button class="btn btn-info m-2"  onclick="speak()">Speak</button>
+    
+      <button  class="btn btn-info m-2"  onclick="stopSpeaking()">Stop Speaking</button>
+      <button  class="btn btn-info m-2"  onclick="cleartext()">Clear</button>
+
+    </div>
+    <div class=" card col-lg-6 m-5 p-5  " style="
+    width: 600px;
+    height: 600px;
+">
+<h4>Your Input</h4>
+      <span class="border border-danger">  <p  style="
+        width: 550px;
+        height:460px;
+    "class="p-2 m-3" id="file-content"></p> </span>
+
+
+
+    </div>
+
+
+  </div>
+  </section>
+ 
+  <script>
+    let voices = [];
+
+    function populateVoiceList() {
+      if (typeof speechSynthesis === 'undefined') {
+        return;
+      }
+      
+      voices = speechSynthesis.getVoices();
+
+      for (let i = 0; i < voices.length; i++) {
+        let option = document.createElement('option');
+        option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+        option.value = i;
+        document.getElementById('voice-select').appendChild(option);
+      }
+    }
+    let msg = new SpeechSynthesisUtterance();
+    function stopSpeaking() {
+      window.speechSynthesis.cancel();
+    }
+    populateVoiceList();
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = populateVoiceList;
+    }
+    function cleartext(){
+      document.getElementById('text-input').value="";
+    }
+    function speak() {
+      let text = document.getElementById('text-input').value;
+      let speed = parseFloat(document.getElementById('speed-input').value);
+      let voiceIndex = document.getElementById('voice-select').value;
+
+      
+      msg.text = text;
+
+      document.getElementById('file-content').innerHTML = text;
+      msg.rate = speed;
+      msg.voice = voices[voiceIndex];
+
+      speechSynthesis.speak(msg);
+     
+    }
+
+    function speakdef() {
+      let text = document.getElementById('text-input').value;
+      let speed = parseFloat(document.getElementById('speed-input').value);
+     
+      
+      msg.text = text;
+
+      document.getElementById('file-content').innerHTML = text;
+      msg.rate = speed;
+    
+
+      speechSynthesis.speak(msg);
+     
+    }
+  </script>
+</body>
+</html>

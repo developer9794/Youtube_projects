@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "firebase": "^9.19.1"
+  },
+  "hosting": {
+
+    "site": "projectexpert",
+
+    "public": "public",
+
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

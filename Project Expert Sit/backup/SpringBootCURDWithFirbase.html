@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<title>SpringBootCURD-With Firbase</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+ <style>
+ body {
+  background-color: #fbfbfb;
+}
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+}
+.card{
+margin: 10px;
+padding: 10px;
+background: #c9efef;
+}
+spam{
+
+  background: powderblue;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+
+* {
+  outline:none;
+	border:none;
+	margin:0px;
+	padding:0px;
+	font-family:Courier, monospace;
+}
+body {
+	background:#333 url(https://static.tumblr.com/maopbtg/a5emgtoju/inflicted.png) repeat;        
+}
+#paper {
+	color:#FFF;
+	font-size:20px;
+}
+#margin {
+	margin-left:12px;
+	margin-bottom:20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none; 
+}
+#text {
+	width:100%;
+	hight:100%;
+	overflow:hidden;
+	background-color:#FFF;
+	color:#0e33c6;
+	font-family:Courier, monospace;
+	font-weight:normal;
+	font-size:24px;
+	resize:none;
+	line-height:40px;
+	padding-left:100px;
+	padding-right:100px;
+	padding-top:45px;
+	padding-bottom:34px;
+	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+	background-repeat:repeat-y, repeat;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
+}
+#title {
+	background-color:transparent;
+	border-bottom:3px solid #FFF;
+	color:#FFF;
+	font-size:20px;
+	font-family:Courier, monospace;
+	height:28px;
+	font-weight:bold;
+	width:220px;
+}
+#button {
+	cursor:pointer;
+	margin-top:20px;
+	float:right;
+	height:40px;
+	padding-left:24px;
+	padding-right:24px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:20px;
+	color:#FFF;
+	text-shadow: 0px -1px 0px #000000;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border-top:1px solid #FFF;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	background-color: #62add6;
+	background-image:url(https://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
+	background-repeat:repeat-x;
+}
+#button:active {
+	zoom: 1;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#button:focus {
+	zoom: 1;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#wrapper {
+	width:700px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:24px;
+	margin-bottom:100px;
+}
+ </style
+<body>
+
+<!--Main Navigation-->
+<header>
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse " style="background-color: aliceblue;">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+          aria-current="true"
+        >
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+        </a>
+        
+        <a href="#1" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-lock fa-fw me-3"></i><span>File Structure </span></a
+        >
+        <a href="#2" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-chart-line fa-fw me-3"></i><span>FBInitialize</span></a
+        >
+        <a href="#4" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>StudentRepository</span>
+        </a>
+        <a href="#5" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-chart-bar fa-fw me-3"></i><span>MyChatApplication</span></a
+        >
+        <a href="#7" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-globe fa-fw me-3"></i><span>Patient</span></a
+        >
+        <a href="#8" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-building fa-fw me-3"></i><span>PatientController</span></a
+        >
+          <a href="#9" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-building fa-fw me-3"></i><span>Pom</span></a
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+
+  <!-- Navbar -->
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top" >
+    <!-- Container wrapper --><h5 class="text-center">  </h5>
+	
+    <div class="row" >
+      <!-- Toggle button -->
+	 
+<div class="col-3"><a class="navbar-brand" href="#">
+	  
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUaoujgakvKsd-Zmfy4f_Va72eQCKqqKhxrw&usqp=CAU"
+          height="25"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+		
+      </a> </div>
+
+
+		
+	  
+   
+      
+		
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main >
+ 
+  <div class="container pt-4">
+  
+<div class="container card ">
+<h2>Simple sprinboot project </h2>
+<p>its one of the simple spring boot project for learning purpose .in this project i was use java springboot 4 , MySql database and Html Css for front end
+using refrance of the code you can write your won code
+
+
+</p>
+</div>
+
+  
+<div class="container card " id="1">
+<h2>File Structure </h2>
+<textarea  readonly id="text" name="text" rows="15" style="overflow: hidden; word-wrap: break-word; resize: none;font-size: medium;">com.example.myChat
+|
+--------------------&gt;FBInitialize.java
+
+---------------------&gt;StudentRepository.java
+
+----------------------&gt; MyChatApplication.java
+
+-----------------------&gt; Patient.java
+
+------------------------&gt;PatientController.java</textarea>
+</div>
+
+<div class="container card " id="2">
+<h2>FBInitialize.java </h2>
+<textarea readonly placeholder="" id="text" name="text" rows="25" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium;">com.example.emp
+package com.example.myChat;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
+import org.springframework.stereotype.Service;
+import javax.annotation.PostConstruct;
+import java.io.FileInputStream;
+@Service
+public class FBInitialize {
+    @PostConstruct
+    public void initialize() {
+        try {
+FileInputStream serviceAccount =
+  new FileInputStream("./src/main/resources/serviceaccount.json");
+FirebaseOptions options = new FirebaseOptions.Builder()
+  .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+  .build();
+FirebaseApp.initializeApp(options);  
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+		</textarea>  
+		
+	
+</div>
+
+
+<div class="container card " id="4">
+<h2>StudentRepository.java</h2>
+
+		<textarea readonly placeholder="" id="text" name="text" rows="13" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+		package com.example.CurdSpringBoot.repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Repository;
+
+import com.example.CurdSpringBoot.domain.student;
+
+@Repository
+public interface StudentRepository extends JpaRepository<student, Long> {
+
+}</textarea>  
+		
+	
+</div>
+
+
+<div class="container card " id="5">
+<h2>MyChatApplication.java</h2>
+		<textarea placeholder="" id="text" name="text" rows="13" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+package com.example.myChat;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MyChatApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MyChatApplication.class, args);
+	}
+
+}
+</textarea>  
+		
+	
+</div>
+
+<div class="container card "id="7">
+<h2> Patient.java</h2>
+		<textarea readonly placeholder="" id="text" name="text" rows="36" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+
+public class Patient {
+	private String name;
+
+	private String email;
+
+	public Patient() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Patient(String name, String email) {
+
+		this.name = name;
+		this.email = email;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+}
+
+		
+		</textarea>  
+		
+	
+</div>
+
+<div class="container card " id="8">
+<h2>PatientController.java</h2>
+		<textarea readonly placeholder="" id="text" name="text" rows="45" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+package com.example.myChat;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+@RestController
+public class PatientController {
+    @Autowired
+    PatientService patientService;
+    @GetMapping("/getall")
+    public List<Patient> getAllPatientDetails( ) throws InterruptedException, ExecutionException
+	{
+    	return patientService.getAllPatientDetails();
+    }
+    @GetMapping("/getPatientDetails")
+    public Patient getPatient(@RequestParam String name ) throws InterruptedException, ExecutionException{
+      System.out.println(":+++++++++++++++"+name);
+    	return patientService.getPatientDetails(name);	 
+    }
+    @PostMapping("/createPatient")
+    public String createPatient(@RequestBody Patient patient ) throws InterruptedException, ExecutionException {
+    	  System.out.println("createPatient>"+patient.getName());	  
+    	  System.err.println(patient);
+    	return patientService.savePatientDetails(patient);
+    }
+//    @PutMapping("/updatePatient")
+//    public String updatePatient(@RequestBody Patient patient  ) throws InterruptedException, ExecutionException {
+//        return patientService.updatePatientDetails(patient);
+//    }
+    @PostMapping("/updatePatient")
+    public String updatePatient( ) throws InterruptedException, ExecutionException {
+    	Patient p=new Patient("dat","dhkhd");
+        return patientService.savePatientDetails(p);
+    }
+    @DeleteMapping("/deletePatient")
+    public String deletePatient(@RequestParam String name){
+        return patientService.deletePatient(name);
+    }
+}) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+		
+		
+		</textarea>  
+		
+	
+</div>
+
+<div class="container card " id="8">
+<h2>service_account.json</h2>
+		<textarea readonly placeholder="" id="text" name="text" rows="10" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+{
+  "type": "service_account",
+  "project_id": "fb-demo-71968",
+  "private_key_id": "18380c074a790af1d4d0537a5be23cd2b2da5913",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCj1cK3yH7PhXnN\nt4Jtag5+K2OPUnJZEhY+YfacRSsrh/6E5vSUxBib+U1SRj/ciSfusQeN/YXYPTwT\nqTOv8ijzFCXa2yxfxcH7h/UQYGO9Esiqx1pK3rdpt17Qwz+7ueNXFL947SCvEOOV\nKszdCSsKZvYDlxcaIuXkgYApGKO54qdRi6JqVe11ikpHaVIrsqgbv2IhJNcYs+2q\npqYcIZEpZPQPNhhNP0YS9oaAkOoXxlJaBYCI+jjodMOcheW28luEo1foLm0vHxjC\nliVVBkfm+QD6Gt1zYshhR1x8UZGcX+CUZTVjKIdJcjxDfbFmCe+S82bPSy/xl+30\nnr6JVeKPAgMBAAECggEALuRAKoTmkrPTxGbpHDLWOhNmF//TfZ3ZIvq78Ec1z2xJ\nkzVdPHURzBajJFC593+EH+OoU2IEHHuORdxQUGQBh201VnoTrce2uSzVHd5Qva1y\nJLsRI0uyeD4FE8BGbg8KvAJSuSQ5jhHJ6YhKAVud54jHkgh9Erx5SxkrmteUCOAZ\n3p0gf/PyrTe/jRBnzgGcz/HsdOvm30R2SNDClgj/7OOZQPx5U6EEvin9V8YdoRtY\nRaLssJz8/cnCYYOQBgYMwswHV1a86BERmDgQ6fsCq/YhqHSfi5+4Tcn2XpwcvdnA\nJ8xpuzIESigCzrUyskqqytq+Tvo3iWFzP68xe7fjnQKBgQDlmzrQcTMytQQh23R6\nOy+eu0+97X8NKBUpfF2nCcQZuLr9SWscd7E/1pRgFMVoaFXpzZ7q2m2sUvKWv7rL\nMjcz3pMchRRopkRLSKr9+RZS2rpdX9jahs0YuDn5p8TcLdy481Rd0l6WAApjK5CH\nN13d9OXB0I5iz/E915+v/CSB9QKBgQC2qwkpFiNbBEspSnjR+8CEFX4ODoi9/Shz\nw4RoK4RX04keTzJT9sTc/w9xoYN3tKcm083AWDXLhjSv59eTxZdyukybuPIYJjVM\nq6Yz71zZ/cYXtC9a0eZFYl3G1YaVNaYIKBATzkojIFzF9Ma4UzdYHzych8aEtSoT\nAsCTGBUL8wKBgQDbckKDKD4jr6iUZ3fqvxijYCk1wIDW5UFcljW4SXg4kTt+i6Yo\n3ij1d7P2JMQMJvQ98r15f2yk795VwEfan1Lta0Q1VOgNoSPSxFBRTrlMVSsbxViw\ne3gYsTMP7o4TVm4IAuDWjxLB0KYc5G1NHtjDI6ZYWGlN/ap3TdeczqNh5QKBgHfa\nx3ru7KnWql5gX+AfmFTSKVCd1rkaN4WlnuYez4o04P5DJpmTC96ZeI+tUy6jGR3P\n0WvINRviZgWZUIjEGDgN5yAx/J89yrEQ20+uWbUq3uREtOGZYcba4P8KsXCLr/Ig\nH1RvgZOEs3qrvgvJhkHK1SE7sVT37bBlmOeq4HxjAoGAHISlAdWbHlAOASAmg3iJ\nAMsi/APJ7ToFeF3LPsLw7FbOO9ME3jwNWLarYC2A4/ZUJH2HB21+sNvxaBccDitv\nuqCo+LM4xkBhwcCkxBlJVXljkTjbRGCTdQzvy2oydB3i9eUBN4hISrLO+kQmnzmW\nq60wGs9x/yAMUBg9grXxlso=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-1lxvt@fb-demo-71968.iam.gserviceaccount.com",
+  "client_id": "112620303181446374410",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1lxvt%40fb-demo-71968.iam.gserviceaccount.com"
+}
+
+		
+		
+		</textarea>  
+		
+	
+</div>
+<div class="container card " id="8">
+<h2>service_account.json</h2>
+		<textarea readonly placeholder="" id="text" name="text" rows="51" style="overflow: hidden; word-wrap: break-word; resize: none; font-size: medium; ">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.6</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>myChat</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>myChat</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+    <groupId>com.google.firebase</groupId>
+    <artifactId>firebase-admin</artifactId>
+    <version>7.1.0</version>
+ </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
+		
+		
+		</textarea>  
+		
+	
+</div>
+
+</div>
+  
+  
+  <script>
+  
+  
+  $(document).ready(function(){
+  $('#title').focus();
+    $('#text').autosize();
+});
+
+function copy( var id ) {
+  let textarea = document.getElementById("1");
+  textarea.select();
+  document.execCommand("copy");
+}
+  </script>
+  
+  </div>
+</main>
+<!--Main layout-->
+      
+</body>
+</html>

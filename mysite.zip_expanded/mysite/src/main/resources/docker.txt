@@ -1,0 +1,6 @@
+<h1>Docker Commands </h1>
+<h2>docker –version</h2>
+This command is used to get the currently installed version of docker
+<h1>docker pull</h1>
+<h2>Usage: docker pull <image name></h2>
+This command is used to pull images from the docker repository(hub.docker.com)

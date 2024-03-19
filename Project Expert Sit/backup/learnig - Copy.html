@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>The Developer</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Impact - v1.1.1
+  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body  ng-app="myApp" ng-controller="myCtrl">
+
+  <!-- ======= Header ======= -->
+  <section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">thedevloper123@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>9637283704</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar -->
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Impact<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="https://kirankalecv.web.app/">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Learning</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Spring boot</a></li>
+                  <li><a href="#">Docker</a></li>
+                  <li><a href="#">Github</a></li>
+                  <li><a href="#">Linux</a></li>
+                  <li><a href="#">MongoDb</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+	<style>
+ body {
+  background-color: #fbfbfb;
+}
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+}
+.card{
+margin: 10px;
+padding: 10px;
+background: #ffd9a7;
+}
+spam{
+
+  background: powderblue;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+ </style>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <main id="main">
+
+ 
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+<div class="container pt-4">
+  
+<div class="container card ">
+<h2>Type of sql command</h2>
+<img src="assets/img/type_of command_sql.png" alt="Girl in a jacket" width="100%" height="600"> 
+<p></p>
+</div>
+
+  
+<div class="container card ">
+<h2>MySql </h2>
+<p>MySQL is a widely used relational database management system (RDBMS).
+
+MySQL is free and open-source.</p>
+</div>
+
+<div class="container card ">
+<h4>How to select data from database  </h4>
+
+
+ <p> Select all the record from table useing follwing commandand</p>
+
+<spam>Example: Select * from  table_name</spam>
+
+</div>
+
+<div class="container card">
+<h4>How to delete data from table  </h4>
+
+
+ <p> If you want to delete data from table by ID you can use this cammand </p>
+ 
+<spam>Example: Delete from table_name where ID = 2;</spam>
+<p> This command delete the Second record from the table</p>
+</div>
+
+<div class="container card">
+<h4>How to update  data from table  </h4>
+
+
+ <p> If you want to update specific recod from the table by appling any condition you can update  the record  </p>
+ 
+<spam> Example:update Customers
+set ContactName = 'Developer', City = 'Pune'
+where CustomerID = 1;</spam>
+
+</div>
+
+
+
+  <div class="container card">
+<h4>How to add record to the table   </h4>
+
+
+ <p> If you want to add record to the table you can use this command </p>
+ 
+<spam> Example: insert into table_name
+value (value1, value2, value3, ...); ;</spam>
+
+
+
+
+</div>
+ <div class="container card">
+<h3>Operators in Sql  </h3>
+<h4>Arithmetic Operators  </h4>
+<table class="table table-striped">
+<tbody><tr>
+<th style="width:20%">Operator</th>
+<th style="width:70%">Description</th>
+<th style="width:70%"></th>
+</tr>
+<tr>
+<td>+</td>
+<td>Add</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_add"></a></td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtract</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_subtract"></a></td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiply</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_multiply"></a></td>
+</tr>
+<tr>
+<td>/</td>
+<td>Divide</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_divide"></a></td>
+</tr>
+<tr>
+<td>%</td>
+<td>Modulo</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_modulo"></a></td>
+</tr>
+</tbody></table>
+
+<h4>Bitwise Operators
+ </h4>
+<table class="table table-striped">
+<tbody><tr>
+<th style="width:20%">Operator</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td>|</td>
+<td>Bitwise OR</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Bitwise exclusive OR</td>
+</tr>
+</tbody></table> 
+
+<h4> Comparison Operators</h4>
+<table class="table table-striped">
+<tbody><tr>
+<th style="width:20%">Operator</th>
+<th style="width:70%">Description</th>
+<th style="width:10%"></th>
+</tr>
+<tr>
+<td>=</td>
+<td>Equal to</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_equal_to"></a></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater than</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_greater_than"></a></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Less than</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_less_than"></a></td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater than or equal to</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_greater_than2"></a></td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Less than or equal to</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_less_than2"></a></td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>Not equal to</td>
+<td><a target="_blank" class="w3-btn btnsmall" href="trymysql.asp?filename=trysql_op_not_equal_to"></a></td>
+</tr>
+</tbody></table>
+
+</div>
+  
+  
+  <div class="container card">
+<h4>Types of SQL Aggregation Function</h4>
+
+<img src="https://static.javatpoint.com/dbms/images/dbms-sql-aggregate-functio.png" alt="DBMS SQL Aggregate Functions">
+</div>
+  
+  
+  
+  
+  </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>By Developer</span>
+          </a>
+          <p>Experience is the name everyone gives to their mistakes</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/people/Kiran-Kannadkar/100004978154650/" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/mr.developer124/" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="linkedin.com/in/kiran-kale-a48919169" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">BE And ME Finale Year Project </a></li>
+            <li><a href="#">Ml Project</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>
+            Pune <br>
+            dapodi senapati chowk<br>
+          Maharashtra <br><br>
+            <strong>Phone:</strong> +919637283704<br>
+            <strong>Email:</strong>thedevsloper123.com<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>The Devloper</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
+       
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+   <script src="assets/js/learnig.js"></script>
+
+</body>
+
+</html>

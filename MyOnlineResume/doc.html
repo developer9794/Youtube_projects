@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top Navbar Example</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul id="navbarid"class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" onclick="Showmydoc(technowings)">Technowings</a>
+        </li>
+		 <li class="nav-item active">
+          <a class="nav-link" onclick="Showmydoc(cybage)">Cybage</a>
+        </li>
+		
+        <li class="nav-item">
+          <a class="nav-link" onclick="Showmydoc(ssc)" >SSC</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="Showmydoc(hsc)">HSC</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="Showmydoc(bcs)" >BCS</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" onclick="Showmydoc(msc)" >MSC</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" onclick="Showmydoc(idProof)" >ID Proof</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" onclick="Showmydoc(vehicle)" >Vehicle</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<section>
+<div class="card">
+<div  id="technowings" class="card">
+<div >
+  <iframe src=".\mydoc\TechnoWings_OfferLetter.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+<div >
+  <iframe src=".\mydoc\TechnoWings3MonthSal_slip.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+<div >
+  <iframe src=".\mydoc\Technowings.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+</div>
+<div id="cybage">
+  <iframe src=".\mydoc\Cybage_OfferLetter.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+<div id="ssc">
+  <iframe src=".\mydoc\SSC.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+
+
+
+<div id="hsc">
+  <iframe src=".\mydoc\HSC.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+
+<div id="bcs">
+  <iframe src=".\mydoc\BCS.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+
+<div id="mcs">
+  <iframe src=".\mydoc\MSC.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+<div  id="idProof" Class="card">
+<div >
+  <iframe src=".\mydoc\Adhar.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+
+<div >
+  <iframe src=".\mydoc\pan.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+
+<div >
+  <iframe src=".\mydoc\VotingID.pdf" style="width:100%;height:700px;"></iframe>
+</div>
+</div>
+
+
+<div id="vehicle">
+<div>
+  <iframe src=".\mydoc\nissansunny.pdf" style="width:100%;height:700px;"></iframe>
+  </div>
+  <div>
+  <iframe src=".\mydoc\HornetRC.pdf" style="width:100%;height:700px;"></iframe>
+  </div>
+</div>
+</div>
+<div id="login">
+
+<!-- Pills navs -->
+<!-- Email input -->
+<div class="card bg-info">
+<h1>Wel-Come</h1>
+	  </div>
+</div>
+
+</section>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+  
+  <script>
+  hsc.style.display="none"
+  bcs.style.display="none"
+  mcs.style.display="none"
+  idProof.style.display="none"
+  vehicle.style.display="none"
+   cybage.style.display="none"
+  ssc.style.display="none"
+   technowings.style.display="none"
+  function Showmydoc(id) {
+  var x = id;
+  Showmydoc2();
+ 
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+function novebarshow() {
+  alert("");
+  
+  if (navbarid.style.display === "none") {
+    navbarid.style.display = "block";
+  } else {
+    navbarid.style.display = "none";
+  }
+} 
+
+
+ function Showmydoc2() {
+  hsc.style.display="none"
+  bcs.style.display="none"
+  mcs.style.display="none"
+  idProof.style.display="none"
+  vehicle.style.display="none"
+  ssc.style.display="none"
+   cybage.style.display="none"
+   technowings.style.display="none"
+} 
+  
+  
+  </script>
+</body>
+</html>

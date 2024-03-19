@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="javaStream" name="javaStream" path="D:/work/JavaStream/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/javaStream" type="j2ee"/>
+</server>
